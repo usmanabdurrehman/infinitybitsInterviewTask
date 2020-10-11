@@ -1,0 +1,65 @@
+.whychoose{
+	margin:50px 0;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-gap: 30px;
+}
+
+.whychoose .description h2{
+	color:var(--main);
+	font-weight: 600;
+	letter-spacing: 1.5px;
+}
+
+.whychoose .description p{
+	color:#aaa;
+	margin:0;
+}
+
+.whychoose .description h4{
+	color:var(--main);
+	margin:0;
+}
+
+.whychoose .smallgrid{
+	margin-top: 15px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 30px;
+}
+
+.whychoose .smallgrid>div{
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	grid-gap:10px;
+}
+
+.whychoose .smallgrid img{
+	width: 80%;
+}
+
+.whychoose .imgDiv{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.whychoose .image{
+	width:85%;
+}
+
+.whychoose .image>div{
+	margin-top:20px;
+	border:5px solid var(--main);
+	position: relative;
+	width:100%;
+	height: 70%;
+}
+
+.whychoose .image img{
+	position: absolute;
+	top:25px;
+	left:25px;
+	width: 100%;
+	height: 100%;
+}

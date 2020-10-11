@@ -1,0 +1,130 @@
+.steps{
+	margin:50px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.steps h2{
+	margin:0;
+	color:var(--main);
+	font-weight:600; 
+}
+
+.steps .line{
+	margin: 5px 0;
+	background: var(--main);
+	width:120px;
+	height: 2px;
+}
+
+.steps p{
+	font-size:14px;
+	color:#666;
+	font-weight: 500;
+	margin:0;
+}
+
+.actualsteps{
+	margin-top: 50px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 50px 1fr 50px 1fr;
+}
+
+.stepnumbers{
+	margin: 30px 0;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 50px 1fr 50px 1fr;
+}
+
+.stepnumbers>div{
+	display: flex;
+	justify-content: center;
+}
+
+.stepnumbers>div>div{
+	display: flex;
+	justify-content: center;
+	width:40px;
+}
+
+.num1{
+	border:2px solid #999;
+}
+
+.num2{
+	border:2px solid var(--main);
+}
+
+.num3{
+	border:2px solid #555;
+}
+
+.actualsteps>div>div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 200px;
+	width: 200px;
+	transform: rotate(45deg);
+	position: relative;
+}
+
+.actualsteps>div>div>div{
+	position: absolute;
+	transform: rotate(-45deg);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	height: 40%;
+}
+
+.actualsteps>div>div>div img{
+	width:60px;
+}
+
+.actualsteps>div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column; 
+}
+
+.actualsteps div div p{
+	color:#fff;
+	font-size: 14px;
+	text-align: center;
+}
+
+.actualsteps>div>p{
+	text-align: center;
+	margin-top: 50px;
+}
+
+.diamond1{
+	background-color: #aaa;
+	box-shadow: 6px 6px 4px #999;
+}
+
+.diamond2{
+	background-color: var(--main);
+	box-shadow: 6px 6px 4px var(--main);
+}
+
+.diamond3{
+	background-color: #666;
+	box-shadow: 6px 6px 4px #555;
+}
+
+.arrowDiv img{
+	width: 100%;
+	margin-top: -50px;
+}
+
+.arrowDiv{
+	display: flex;
+	align-items: center;
+}

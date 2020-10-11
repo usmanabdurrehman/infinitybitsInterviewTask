@@ -1,0 +1,81 @@
+.thatswhy{
+	margin:50px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.thatswhy h2{
+	margin:0;
+	color:var(--main);
+	font-weight:600; 
+}
+
+.thatswhy .line{
+	margin: 5px 0;
+	background: var(--main);
+	width:120px;
+	height: 2px;
+}
+
+.thatswhy p{
+	font-size:14px;
+	color:#666;
+	font-weight: 500;
+	margin:0;
+}
+
+.thatswhy .smallgrid{
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	min-height: 300px;
+}
+
+.thatswhy .smallgrid .description{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.thatswhy .smallgrid .description h5{
+	color:var(--main);
+	margin:5px 0;
+}
+
+.thatswhy .smallgrid .description p{
+	color:#666;
+	line-height: 24px;
+}
+
+.thatswhy .image{
+	width:85%;
+}
+
+.thatswhy .image>div{
+	margin-top:20px;
+	border:5px solid var(--main);
+	position: relative;
+	width:100%;
+	height: 70%;
+}
+
+.thatswhy .image img{
+	position: absolute;
+	top:25px;
+	right:25px;
+	width: 100%;
+	height: 100%;
+}
+
+.thatswhy .description img{
+	height: 20px;
+	width: 20px;
+}
+
+.thatswhy .description img:nth-child(1){
+	margin-right:5px;
+}
+
+.thatswhy .description img:nth-child(2){
+	margin-left:5px;
+}

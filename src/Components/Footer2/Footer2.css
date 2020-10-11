@@ -1,0 +1,12 @@
+.footer2{
+	min-height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--main);
+}
+
+.footer2 p{
+	font-size: 14px;
+	color:white;
+}
