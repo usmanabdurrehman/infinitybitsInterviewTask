@@ -32,3 +32,9 @@
 	border-left: solid 3px var(--main);
 	color:var(--main);
 }
+
+@media (max-width: 720px){
+	.introduction{
+		display: block;
+	}
+}

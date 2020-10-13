@@ -9,6 +9,7 @@
 	margin:0;
 	color:var(--main);
 	font-weight:600; 
+	text-align: center;
 }
 
 .whatyouwish .line{
@@ -23,19 +24,21 @@
 	color:#666;
 	font-weight: 500;
 	margin:0;
+	text-align: center;
 }
 
 .whatyouwish .frames{
 	margin-top: 30px;
 	width: 100%;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-	grid-gap:20px;
+	grid-template-columns: repeat(auto-fit,minmax(130px,1fr));
+	grid-column-gap:20px;
+	grid-row-gap: 40px;
 }
 
 .whatyouwish .frames>div>div{
 	background-color: #eee;
-	padding:20px;
+	padding:10%;
 	height: 100%;
 	position: relative;
 	transition: 0.5s;

@@ -51,7 +51,7 @@ let Steps = () => {
 					to you</p>
 				</div>
 			</div>
-			<Button marginTop='20px' width="300px" borderAll={true} main={true} text="START FRAMING"/>
+			<Button marginTop='20px' width="280px" borderAll={true} main={true} text="START FRAMING"/>
 		</div>
 		)
 }

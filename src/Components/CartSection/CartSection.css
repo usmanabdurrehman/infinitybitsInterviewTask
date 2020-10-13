@@ -75,8 +75,6 @@
 	font-size: 14px;
 }
 
-
-
 .cartsection .checkout{
 	margin: 50px 0 0 0;
 	display: grid;
@@ -84,7 +82,7 @@
 	grid-gap: 100px;
 }
 
-.cartsection .checkout .coupon{
+.cartsection .checkout .coupon>div{
 	display: grid;
 	grid-template-columns: 50px 1fr;
 }
@@ -99,12 +97,6 @@
 .cartsection .checkout .coupon p{
 	color:var(--main);
 	line-height: 22px;
-}
-
-.cartsection .checkout .checkoutsection{
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
 }
 
 .cartsection .checkout .checkoutsection{
@@ -199,4 +191,79 @@
 .closeWrapper img{
 	width:30px;
 	cursor: pointer;
+}
+
+.radio{
+	display: none;
+}
+
+.smolgrid{
+	display: none;
+	grid-template-columns: 1fr 1fr;
+}
+
+.smolgrid>div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding:10px;
+	font-size: 14px;
+}
+
+.smolgrid>div:nth-child(odd){
+	color:var(--main);
+	font-weight: 700;
+	border-right: 1px solid #ccc;
+}
+
+.smolgrid>div:nth-child(even){
+	color:#999;
+	font-weight: 600;
+	letter-spacing: 2px;
+}
+
+.smolgrid img{
+	width: 50px;
+	height: 50px;
+}
+
+@media(max-width: 680px){
+	.cartsection .checkout{
+		display: block;
+	}
+	.cartsection .checkout .checkoutsection{
+		margin-top: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.cartsection .checkout .coupon{
+		display: flex;
+		justify-content: flex-start;
+	}
+	.cartsection .checkout .coupon>div{
+		display: block;
+	}
+	.radio2{
+		display: inline;
+		margin-left:-10px;
+	}
+	.radio1{
+		display: none;
+	}
+	.cartsection .checkout .checkoutsection .divwrapper{
+		width: 100%;
+	}
+	.cartsection .checkout .checkoutsection button{
+		width: 100%;
+	}
+}
+
+@media (max-width: 550px){
+	.smolgrid{
+		display: grid;
+	}
+	.cartsection .shopitem .content,.cartsection .shopitem .headings{
+		display: none;
+	}
 }

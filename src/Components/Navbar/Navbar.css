@@ -1,6 +1,7 @@
 .navbar{
 	min-height: 50px;
 	background-color: #eee;
+	position: relative;
 }
 
 .navcontainer{
@@ -77,10 +78,61 @@
 	display: flex;
 }
 
-/*.navbar .text{
-	margin-top: 5px;
-}*/
+.hamburgermenu{
+	display: none;
+}
 
-/*.navbar .menu>div + div{
-	margin-left:20px;
-}*/
+.sidebar{
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	height: 100vh;
+	top:0;
+	right:0;
+	z-index: 1000;
+	background: #eee;
+	width:200px;
+	visibility: hidden;
+	padding: 20px;
+	opacity: 0;
+	transition: 0.5s;
+	/*width:0;*/
+
+}
+
+.navbar .menu .sidebar>div{
+	margin-top:20px;
+}
+
+.hamburgermenu:hover .sidebar{
+	visibility: visible;
+	opacity: 1;
+}
+
+/*.navbar .menu .hamburgermenu:hover .dummy{
+	font-size: 200px;
+	width: 100px;
+}
+*/
+@media(max-width: 880px){
+	.navbar .menu>div{
+		display: none;
+	}
+
+	.navbar .menu .hamburgermenu{
+		display: block;
+	}
+
+	.navbar .menu .sidebar{
+		display: block;
+	}
+
+	.navbar .dropdowncontent{
+		z-index: 10000;
+	}
+
+	.hamburgermenu:hover .sidebar{
+		visibility: visible;
+		opacity: 1;
+	}
+}

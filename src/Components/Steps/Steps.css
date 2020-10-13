@@ -37,6 +37,7 @@
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 50px 1fr 50px 1fr;
+	grid-gap: 30px;
 }
 
 .stepnumbers>div{
@@ -127,4 +128,41 @@
 .arrowDiv{
 	display: flex;
 	align-items: center;
+}
+
+@media(max-width: 1180px){
+	.steps .actualsteps>div:nth-child(even){
+		display: none;
+	}
+	.steps .stepnumbers>div:nth-child(even){
+		display: none;
+	}
+	.actualsteps{
+		grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+	}
+	.stepnumbers{
+		grid-template-columns: repeat(3,minmax(0,1fr));
+	}	
+}	
+
+/*@media(max-width: 80px){
+	.actualsteps>div{
+		margin-top:60px;
+	}	
+}*/
+
+@media(max-width: 900px){
+	.stepnumbers{
+		display: none;
+	}	
+	.actualsteps>div{
+		margin-top:60px;
+	}	
+}
+
+@media(max-width: 300px){
+	.actualsteps>div>div{
+		height: 170px;
+		width: 170px;
+	}
 }

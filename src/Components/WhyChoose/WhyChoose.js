@@ -59,7 +59,7 @@ let WhyChoose = () => {
 						</div>
 					</div>
 				</div>
-				<Button marginTop='20px' width="300px" borderAll={true} main={true} text="START FRAMING"/>
+				<Button marginTop='20px' width="240px" borderAll={true} main={true} text="START FRAMING"/>
 			</div>
 			<div className='image'>
 				<div><img src='image/600636-PMYQH2-102.png'/></div>

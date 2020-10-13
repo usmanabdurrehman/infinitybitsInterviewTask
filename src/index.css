@@ -30,3 +30,9 @@ a::-moz-focus-inner{
   width:80%;
   overflow: visible;
 }
+
+@media (max-width: 1020px){
+  .container{
+    width: 95%;
+  }
+}

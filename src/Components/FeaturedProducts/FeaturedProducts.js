@@ -1,26 +1,32 @@
-import React, { useState, useContext } from "react";
+import React, { useState} from "react";
 import "./FeaturedProducts.css";
-import { Redirect } from "react-router-dom";
-import { ShoppingCartContext } from "../../Context/ShoppingCartContext";
 
 let FeaturedProducts = () => {
 
-	let [redirect, setRedirect] = useState(false);
-	let { setShoppingCart, shoppingCart } = useContext(ShoppingCartContext);
-
 	let clickHandler = (name) => {
-		setShoppingCart([
-			...shoppingCart,
-			{
+		let shoppingCart = localStorage.getItem('cart')?JSON.parse(localStorage.getItem('cart')):[]
+		if(shoppingCart.length==0){
+			shoppingCart.push({
 				id: shoppingCart.length + 1,
 				name,
 				artType:'Digital Photo',
 				matStyle:'White',
 				frameSize:'24*24',
 				price:65
-			},
-		]);
-		setRedirect(true);
+			})
+			localStorage.setItem('cart',JSON.stringify(shoppingCart))
+		}
+		else if(!shoppingCart.find(item=>item.name==name)){
+			shoppingCart.push({
+				id: shoppingCart.length + 1,
+				name,
+				artType:'Digital Photo',
+				matStyle:'White',
+				frameSize:'24*24',
+				price:65
+			})
+			localStorage.setItem('cart',JSON.stringify(shoppingCart))
+		}
 	};
 
 
@@ -53,6 +59,7 @@ let FeaturedProducts = () => {
 				<div className="bigImage">
 					<img src="image/3480373.png" />
 				</div>
+				<div className='smallergrid'>
 				{
 					images.map(image=>(
 						<div>
@@ -64,8 +71,8 @@ let FeaturedProducts = () => {
 						</div>
 					))
 				}
+				</div>
 			</div>
-			{(redirect==true?<Redirect to='/shoppingCart'/>:null)}
 		</div>
 	);
 };

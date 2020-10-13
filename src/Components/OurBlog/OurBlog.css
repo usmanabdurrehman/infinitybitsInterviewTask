@@ -25,6 +25,10 @@
 	margin:0;
 }
 
+.ourblog>p{
+	text-align: center;
+}
+
 .ourblog .smallgrid{
 	margin-top: 40px;
 	display: grid;
@@ -53,4 +57,19 @@
 	margin:10px 0;
 	display: flex;
 	justify-content: space-between;
+}
+
+@media(max-width: 840px){
+	.ourblog .smallgrid{
+		display: block;
+	}
+	.ourblog .smallgrid>div+div{
+		margin-top:25px;
+	}
+}
+
+@media(max-width: 520px){
+	.ourblog .smallgrid>div{
+		display: block;
+	}
 }

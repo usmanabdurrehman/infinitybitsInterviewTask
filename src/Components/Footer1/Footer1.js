@@ -17,7 +17,7 @@ let Footer1 = () => {
 					</div>
 					<p>Get Inspiration</p>
 					<input placeholder="Enter your email"/>
-					<Button borderAll={false} width="100px" borderAll={false} main={true} text="Submit"/>
+					<Button width="100px" borderAll={true} main={true} text="Submit"/>
 				</div>
 				<div>
 					<p>Framing Process</p>

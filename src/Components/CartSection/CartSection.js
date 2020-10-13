@@ -1,8 +1,14 @@
-import React,{useContext,useEffect} from 'react'
+import React,{useState} from 'react'
 import './CartSection.css'
 import Radio from '@material-ui/core/Radio'
 import { withStyles } from '@material-ui/core/styles';
-import {ShoppingCartContext} from '../../Context/ShoppingCartContext'
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 
 const StyledRadio = withStyles({
   root: {
@@ -16,12 +22,15 @@ const StyledRadio = withStyles({
 
 let CartSection = () => {
 
-	let {shoppingCart,setShoppingCart} = useContext(ShoppingCartContext)
+	let [shoppingCart,setShoppingCart] = useState((localStorage.getItem('cart'))?JSON.parse(localStorage.getItem('cart')):[])
 
 	let deleteHandler = (id) => {
-		let tempshoppingcart = shoppingCart
+		console.log('In delete handler')
+		let tempshoppingcart = JSON.parse(localStorage.getItem('cart'))
 		tempshoppingcart = tempshoppingcart.filter(item=>item.id!=id)
+		localStorage.setItem('cart',JSON.stringify(tempshoppingcart))
 		setShoppingCart(tempshoppingcart)
+		console.log(shoppingCart)
 	}
 
 	return(
@@ -54,20 +63,62 @@ let CartSection = () => {
 									<div>{item.frameSize}</div>
 									<div>{item.price}$</div>
 								</div>
-							</div>	
+								<div className='smolgrid'>
+									<div>Item</div>
+									<div><img src='image/cartImage.jpg'/></div>
+									<div>Name</div>
+									<div>{item.name}</div>
+									<div>Art Type</div>
+									<div>{item.artType}</div>
+									<div>Mat Style</div>
+									<div>{item.matStyle}</div>
+									<div>Frame Size</div>
+									<div>{item.frameSize}</div>
+									<div>Price</div>
+									<div>{item.price}$</div>
+								</div>
+							</div>
+							{/*<div className='table'>
+																<TableContainer component={Paper}>
+															      <Table>
+															        <TableHead>
+															          <TableRow>
+															            <TableCell>Item</TableCell>
+															            <TableCell align="right">Name</TableCell>
+															            <TableCell align="right">Art Type</TableCell>
+															            <TableCell align="right">Mat Style</TableCell>
+															            <TableCell align="right">Frame Size</TableCell>
+															            <TableCell align="right">Price</TableCell>
+															          </TableRow>
+															        </TableHead>
+															        <TableBody>
+															            <TableRow>
+																            <TableCell><img src='image/cartImage.jpg'/></TableCell>
+																            <TableCell align="right">{item.name}</TableCell>
+																            <TableCell align="right">{item.artType}</TableCell>
+																            <TableCell align="right">{item.matStyle}</TableCell>
+																            <TableCell align="right">{item.frameSize}</TableCell>
+																            <TableCell align="right">{item.price}</TableCell>
+															            </TableRow>
+															        </TableBody>
+															      </Table>
+															    </TableContainer>
+															</div>*/}	
 						</div>
 						))}
 				</div>
 
 				<div className='checkout'>
 					<div className='coupon'>
-						<div><StyledRadio/></div>
 						<div>
-							<h3>Attach a Gift Note</h3>
-							<p>Give a personalized touch to your
-							order by adding a gift note. Absolutely free
-							</p>
-						</div>
+							<div className='radio1'><StyledRadio/></div>
+							<div>
+								<h3><span className='radio2'><StyledRadio/></span> Attach a Gift Note</h3>
+								<p>Give a personalized touch to your
+								order by adding a gift note. Absolutely free
+								</p>
+							</div>
+						</div>	
 					</div>
 					<div className='checkoutsection'>
 						<div className='divwrapper'>
